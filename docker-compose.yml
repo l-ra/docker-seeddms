@@ -1,0 +1,33 @@
+version: "2"
+
+services:
+   seeddms:
+        build: .
+        environment:
+            - VIRTUAL_HOST=${DMS_HOST}
+            - LETSENCRYPT_HOST=${DMS_HOST}
+            - LETSENCRYPT_EMAIL=${DMS_EMAIL}
+        volumes:
+            - "seeddms-data:/var/www/seeddms50x/"
+   
+   config:
+        image: bash
+        restart: 'no'
+        entrypoint: bash -c 'echo "client_max_body_size 100m;" > /etc/nginx/vhost.d/${DMS_HOST}'
+        volumes:
+            - "nginx-proxy-vhosts:/etc/nginx/vhost.d"      
+   tika:
+        image: fmantuano/apache-tika-server             
+
+networks:
+   default:
+     external:
+        name: proxy 
+
+volumes:
+  seeddms-data:
+     external:
+        name: seeddms-data
+  nginx-proxy-vhosts:
+     external:
+        name: nginx-proxy-vhosts
