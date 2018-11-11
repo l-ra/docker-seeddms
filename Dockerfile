@@ -8,10 +8,10 @@ MAINTAINER Ludwig Prager <ludwig.prager@celp.de>
 #    LANG=C.UTF-8  LC_ALL=C.UTF-8 apt update && \
 #    LANG=C.UTF-8  LC_ALL=C.UTF-8 apt install -q -y libpng-dev imagemagick
 RUN apt update 
-RUN apt install -y locales
-#RUN locale-gen C.UTF-8
-RUN apt install -q -y software-properties-common 
-RUN add-apt-repository ppa:ondrej/php 
+RUN apt install -y locales locales-all
+RUN locale-gen C.UTF-8
+RUN LANG=C.UTF-8  LC_ALL=C.UTF-8 apt install -q -y software-properties-common 
+RUN LANG=C.UTF-8  LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php 
 RUN apt update 
 RUN apt install -q -y libpng-dev imagemagick
 
