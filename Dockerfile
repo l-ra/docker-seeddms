@@ -1,7 +1,8 @@
 FROM php:7.0-apache
 MAINTAINER Ludwig Prager <ludwig.prager@celp.de>
 
-RUN apt install -q -y software-properties-common && \
+RUN apt update && \
+    apt install -q -y software-properties-common && \
     add-apt-repository ppa:ondrej/php && \
     apt update && \
     apt install -q -y libpng-dev imagemagick
