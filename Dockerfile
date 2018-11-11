@@ -3,11 +3,11 @@ MAINTAINER Ludwig Prager <ludwig.prager@celp.de>
 
 RUN apt update && \
     apt  install -y language-pack-en-base && \
-    locale-gen en_US.UTF-8 && \
+    locale-gen C.UTF-8 && \
     apt install -q -y software-properties-common && \
-    LANG=en_US.UTF-8  LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php && \
-    LANG=en_US.UTF-8  LC_ALL=en_US.UTF-8 apt update && \
-    LANG=en_US.UTF-8  LC_ALL=en_US.UTF-8 apt install -q -y libpng-dev imagemagick
+    LANG=C.UTF-8  LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php && \
+    LANG=C.UTF-8  LC_ALL=C.UTF-8 apt update && \
+    LANG=C.UTF-8  LC_ALL=C.UTF-8 apt install -q -y libpng-dev imagemagick
 
 RUN docker-php-ext-install gd
 
