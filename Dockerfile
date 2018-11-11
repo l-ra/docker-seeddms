@@ -1,11 +1,10 @@
 FROM php:7.0-apache
 MAINTAINER Ludwig Prager <ludwig.prager@celp.de>
 
-RUN add-apt-repository ppa:ondrej/php
-
-RUN apt update
-
-RUN apt install -q -y libpng-dev imagemagick
+RUN apt install -q -y software-properties-common && \
+    add-apt-repository ppa:ondrej/php && \
+    apt update && \
+    apt install -q -y libpng-dev imagemagick
 
 RUN docker-php-ext-install gd
 
