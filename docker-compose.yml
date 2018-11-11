@@ -17,7 +17,7 @@ services:
         volumes:
             - "nginx-proxy-vhosts:/etc/nginx/vhost.d"      
    tika:
-        image: fmantuano/apache-tika-server             
+        image: logicalspark/docker-tikaserver             
 
 networks:
    default:
