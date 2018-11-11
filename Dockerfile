@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.1-apache
 MAINTAINER Ludwig Prager <ludwig.prager@celp.de>
 
 # RUN apt update && \
@@ -17,7 +17,7 @@ RUN apt install -q -y libpng-dev imagemagick
 
 RUN docker-php-ext-install gd
 
-RUN apt-get install -q -y php7.2-gd php7.2-sqlite poppler-utils catdoc
+RUN apt-get install -q -y php7.1-gd php7.1-sqlite poppler-utils catdoc
 
 ADD misc/seeddms-quickstart-5.0.5.tar.gz /var/www/
 
