@@ -1,9 +1,9 @@
 FROM php:7.0-apache
 MAINTAINER Ludwig Prager <ludwig.prager@celp.de>
 
-RUN apt-get update
+RUN apt update
 
-RUN apt-get install -q -y libpng12-dev imagemagick
+RUN apt install -q -y libpng12-dev imagemagick
 
 RUN docker-php-ext-install gd
 
