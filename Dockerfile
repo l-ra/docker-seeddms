@@ -3,7 +3,7 @@ MAINTAINER Ludwig Prager <ludwig.prager@celp.de>
 
 RUN apt update
 
-RUN apt install -q -y libpng16-dev imagemagick
+RUN apt install -q -y libpng-dev imagemagick
 
 RUN docker-php-ext-install gd
 
