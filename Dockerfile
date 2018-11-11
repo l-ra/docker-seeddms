@@ -7,7 +7,7 @@ RUN apt install -q -y libpng-dev imagemagick
 
 RUN docker-php-ext-install gd
 
-RUN apt-get install -q -y php-pear  php5-gd php5-sqlite poppler-utils catdoc
+RUN apt-get install -q -y php7.0-gd php7.0-sqlite poppler-utils catdoc
 
 ADD misc/seeddms-quickstart-5.0.5.tar.gz /var/www/
 
