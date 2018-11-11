@@ -11,9 +11,9 @@ RUN apt update
 RUN apt install -y locales
 #RUN locale-gen C.UTF-8
 RUN apt install -q -y software-properties-common 
-RUN LANG=C.UTF-8  LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php 
-RUN LANG=C.UTF-8  LC_ALL=C.UTF-8 apt update 
-RUN LANG=C.UTF-8  LC_ALL=C.UTF-8 apt install -q -y libpng-dev imagemagick
+RUN add-apt-repository ppa:ondrej/php 
+RUN apt update 
+RUN apt install -q -y libpng-dev imagemagick
 
 RUN docker-php-ext-install gd
 
